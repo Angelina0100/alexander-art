@@ -1,0 +1,125 @@
+@import "mixins";
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+html,
+body {
+  background-color: #fff;
+  font-family: "Neue Machina", "Ubuntu","Roboto", "Arial", sans-serif;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 26px;
+  color: #232323;
+  overflow-x: hidden;
+
+  @include desktop-lg {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  @include tablet {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+h1 {
+  font-weight: normal;
+  font-size: 2.8em;;
+  line-height: 1.17em;
+
+  @include tablet {
+    font-size: 2em;
+  }
+}
+
+h2 {
+  font-weight: normal;
+  font-size: 2em;
+  line-height: 48px;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+input {
+  border: none;
+}
+
+select {
+  border: none;
+}
+
+.wrapper {
+  max-width: 1340px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+  @include laptop {
+    padding: 0 20px;
+  }
+  @include tablet {
+    padding: 0 10px;
+  }
+  @include desktop-lg {
+
+  }
+}
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+.cta-link {
+  width: 223px;
+  height: 52px;
+  background: #CE4E06;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  font-weight: normal;
+  text-align: center;
+  color: #fff;
+  transition: box-shadow .3s ease-in-out;
+
+  &:hover,
+  &:active {
+    box-shadow: 0 7px 20px rgba(206, 78, 6, 0.3);
+  }
+}

@@ -14,13 +14,6 @@ $(document).ready(function(){
     });
 
 
-    // Assign some jquery elements we'll need
-    var $swiper = $(".swiper-container");
-    var $bottomSlide = null; // Slide whose content gets 'extracted' and placed
-    // into a fixed position for animation purposes
-    var $bottomSlideContent = null; // Slide content that gets passed between the
-    // panning slide stack and the position 'behind'
-    // the stack, needed for correct animation style
 
     var mySwiper = new Swiper(".swiper-container", {
         slideToClickedSlide: true,
@@ -45,20 +38,35 @@ $(document).ready(function(){
             }
         }
     });
-});
-/*var $owl = $('.owl-carousel');
 
-$owl.children().each( function( index ) {
-    $(this).attr( 'data-position', index ); // NB: .attr() instead of .data()
+    $("#message").on('click', function(){
+        $('.layout').removeClass("visually-hidden");
+        $(".popup").removeClass("visually-hidden").addClass('popup__anim');
+    });
+
+    $("#send-btn").on('click', function(){
+        let input = $('.input--text');
+        if(input.val() === '') {
+            input.css({'border-color':'#e23030'});
+        }
+    });
 });
 
-$owl.owlCarousel({
-    center: true,
-    loop: true,
-    items: 3
+function closePopup() {
+    $('.popup').removeClass("popup__anim").addClass("visually-hidden");
+    $('.layout').addClass("visually-hidden");
+}
+
+$(document).keyup(function(e) {
+    if (e.key === "Escape") {
+        closePopup();
+    }
 });
 
-$(document).on('click', '.owl-item>div', function() {
-    var $speed = 300;  // in ms
-    $owl.trigger('to.owl.carousel', [$(this).data( 'position' ), $speed] );
-});*/
+$(document).mouseup(function (e){
+    let popup = $('.popup');
+    if (!popup.is(e.target) && popup.has(e.target).length === 0 && popup.hasClass("popup__anim")) {
+        closePopup();
+    }
+});
+

@@ -29,4 +29,19 @@
   }
 }
 
+@mixin cta-link($btn-call: true) {
+  @if $btn-call {
+    background-color: $orange;
+    border: 1px solid transparent;
+    color: #ffffff;
 
+    &:hover,
+    &:active {
+      box-shadow: 0 7px 20px rgba(206, 78, 6, 0.3);
+    }
+  } @else {
+    background-color: transparent;
+    border: 1px solid currentColor;
+    color: $orange;
+  }
+}

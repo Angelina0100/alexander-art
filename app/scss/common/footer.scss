@@ -1,0 +1,220 @@
+.footer {
+  .wrapper {
+    padding: 102px 0 140px;
+
+    @include tablet {
+      padding: 60px 0 100px;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: center;
+    margin: 45px auto 0;
+  }
+
+  &__call {
+    margin-right: 25px;
+    @include cta-link(true);
+
+    &:hover,
+    &:active {
+      @include cta-link(false);
+    }
+  }
+
+  &__msg {
+    @include cta-link(false);
+
+    &:hover,
+    &:active {
+      @include cta-link(true);
+    }
+  }
+
+  &__tel {
+    width: fit-content;
+    display: block;
+    margin: 69px auto 0;
+  }
+
+  &-socials {
+    width: fit-content;
+    display: flex;
+    margin: 27px auto 0;
+
+    &__btn {
+      width: 44px;
+      height: 44px;
+      display: block;
+      background-size: 44px;
+      background-repeat: no-repeat;
+
+      &.btn-insta {
+        margin-right: 22px;
+        background-image: url("../images/dest/instagram-ft.svg");
+      }
+
+      &.btn-vk{
+        background-image: url("../images/dest/vk-ft.svg");
+      }
+    }
+  }
+}
+
+.popup {
+  max-width: 938px;
+  width: 100%;
+  padding: 0 10px;
+  position: absolute;
+  left: 50%;
+  bottom: 100px;
+  transform: translate(-50%, 0) scale(0);
+  z-index: 100;
+
+  @include laptop {
+    max-width: 746px;
+  }
+
+  @include tablet {
+    max-width: 556px;
+  }
+
+  &__container {
+    max-width: 918px;
+    width: 100%;
+    margin: 0 auto;
+    background: #FFFFFF;
+    padding: 48px 80px 36px;
+    color: #666666;
+
+    @include tablet {
+      padding: 36px 40px 36px;
+    }
+
+    label:not(.popup-form__label) {
+      margin-bottom: 22px;
+      display: block;
+    }
+
+    span {
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    input,
+    textarea {
+      background: #ffffff;
+      border: 1px solid #D1D1D1;
+      border-radius: 0;
+    }
+
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 5px 10px;
+      font-family: "Neue Machina", "Ubuntu","Roboto", "Arial", sans-serif;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 26px;
+    }
+
+    input[type="text"] {
+      height: 52px;
+
+      @include tablet {
+        height: 40px;
+      }
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    button {
+      @include cta-link(true);
+
+      &:hover,
+      &:active {
+        @include cta-link(false);
+      }
+    }
+
+    .textarea__about {
+      min-height: 126px;
+
+      @include tablet {
+        min-height: 86px;
+      }
+    }
+
+    .textarea__ideas {
+      min-height: 256px;
+
+      @include tablet {
+        min-height: 126px;
+      }
+    }
+  }
+
+  &-form {
+    &__label {
+      max-width: 318px;
+      margin-left: 35px;
+      display: inline-flex;
+      align-items: center;
+      cursor: pointer;
+
+      @include laptop {
+        margin-left: 18px;
+      }
+
+      @include tablet {
+        max-width: 100%;
+        margin-top: 10px;
+        margin-left: 0;
+      }
+
+      span {
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+
+    &__checkbox {
+      position: relative;
+      min-width: 28px;
+      height: 28px;
+      display: inline-block;
+      margin-right: 14px;
+      cursor: pointer;
+      appearance: none;
+
+      + label {
+        cursor: pointer;
+      }
+
+      &:hover,
+      &:focus {
+        box-shadow: 6px 4px 20px -6px #666;
+      }
+
+      &:checked {
+        &:before {
+          position: absolute;
+          content: '';
+          top: 4px;
+          left: 4px;
+          width: 18px;
+          height: 18px;
+          background-color: $orange;
+        }
+      }
+    }
+  }
+
+  &__anim {
+    transform: translate(-50%, 0) scale(1);
+    transition: transform 500ms;
+  }
+}

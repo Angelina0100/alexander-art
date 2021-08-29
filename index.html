@@ -259,11 +259,14 @@
         </section>
     </main>
 
-    <footer id="contacts" class="footer section__footer">
+    <footer class="footer section__footer">
         <div class="wrapper">
             <h2 class="section__header">Контакты</h2>
-            <p class="section__description section-description--footer">Позвоните мне, обсудим детали вашего проекта</p>
-            <a href="tel:+79991640415" class="footer__call cta-link">Позвонить</a>
+            <p class="section__description section-description--footer">Позвоните мне или напишите. Обсудим детали вашего проекта, разработаем уникальную идею</p>
+            <div class="footer__btns">
+                <a href="tel:+79991640415" class="footer__call cta-link">Позвонить</a>
+                <button type="button" id="message" class="footer__msg cta-link">Написать</button>
+            </div>
             <a class="footer__tel" href="tel:+79991640415">+7 999 164-04-15</a>
 
             <ul class="footer__socials footer-socials">
@@ -272,6 +275,44 @@
             </ul>
         </div>
     </footer>
+
+    <div id="popup" class="popup visually-hidden">
+    <div class="popup__container">
+        <form id="msg-form" class="popup__form popup-form" method="POST"
+              action="https://jsonplaceholder.typicode.com/posts">
+            <fieldset form="msg-form">
+                <label>
+                    <span>Как вас зовут?</span>
+                    <input  name="userName" type="text" class="popup-form__input input--text" required minlength="2">
+                </label>
+
+                <label>
+                    <span>Как с вами связаться?</span>
+                    <input name="contacts" type="text" class="popup-form__input input--text" required>
+                </label>
+
+                <label>
+                    <span>Расскажите немного о вашем бизнесе</span>
+                    <textarea name="business" class="popup-form__textarea textarea__about"></textarea>
+                </label>
+
+                <label>
+                    <span>Какие у&nbsp;вас идеи по&nbsp;улучшению внешнего вида заведения?</span>
+                    <textarea name="ideas" class="popup-form__textarea textarea__ideas"></textarea>
+                </label>
+
+                <button type="submit" id="send-btn" class="popup-form__btn cta-link">Отправить</button>
+
+
+                <label class="popup-form__label">
+                    <input id="accept-checkbox" type="checkbox" class="popup-form__checkbox" required>
+                    <span>Я&nbsp;согласен с&nbsp;условиями и&nbsp;политикой конфиденциальности</span>
+                </label>
+            </fieldset>
+        </form>
+    </div>
+    </div>
+    <div class="layout visually-hidden"></div>
     <script src="js/app.min.js"></script>
 </body>
 </html>

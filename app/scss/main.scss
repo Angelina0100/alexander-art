@@ -225,7 +225,7 @@
   &__picture {
     display: flex;
     flex: 1 1 50%;
-    background-image: url("../images/dest/img-9_1x.jpg") center/cover no-repeat;
+    background: url("../images/dest/img-9_1x.jpg") center/cover no-repeat;
 
     @include mobile {
       min-height: 440px;
